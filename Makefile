@@ -5,13 +5,13 @@ CFLAGS=-g -Wall -pedantic
 LDFLAGS=
 LIBS= -lpcap
 
-SOURCES=crst.c
+SOURCES=sniper.c
 
 HEADERS=$(wildcard *.h)
 
 OBJECTS=$(SOURCES:.c=.o)
 
-TARGET=crst
+TARGET=sniper
 
 all: $(SOURCES) $(TARGET) $(HEADERS)
 
