@@ -20,7 +20,7 @@ nc -klv 11111
 ```
 
 ```
-# ACK forced session close
+# Force close ACK sessions.
 
 sniper lo 11111 "(tcp[13] == 0x10)"
 ```
