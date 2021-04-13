@@ -3,3 +3,30 @@ Sniper is a command line tool that sniffs it locally for active TCP connections 
 
 
 Sending spurious RST Packets can be used for malicious purposes (e.g., DoS attack [1,4]) or closing down suspicious connections. In recent years, it has been used by ISPs to close down P2P connections (e.g., by [Comcast] (http://en.wikipedia.org/wiki/Comcast#Network_neutrality)).
+
+
+## Build
+
+#### ubuntu
+```
+sudo apt -y install libpcap-dev
+make
+```
+
+## How to Use
+
+```
+nc -klv 11111
+```
+
+```
+# ACK forced session close
+
+sniper lo 11111 "(tcp[13] == 0x10)"
+```
+
+```
+lsof -i4:11111 -P
+nc -v <SERVER_ADDR> 11111
+```
+
